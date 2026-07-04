@@ -1,0 +1,128 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #FAF9F5;
+  --color-accent: #D97757;
+  --color-text: #141413;
+  --color-muted: #B1ADA1;
+  --color-claude: #6A9BCC;
+  --color-gpt: #788C5D;
+  --color-dark: #0B1120;
+  --color-danger: #C25B4A;
+  --color-card-bg: #F0EDE8;
+  --font-poppins: 'Poppins', sans-serif;
+  --font-lora: 'Lora', serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 120%;
+}
+
+:root {
+  --content-column-width: min(92vw, 54rem);
+  --wide-column-width: min(96vw, 78rem);
+  --full-layout-width: min(97vw, 86.4rem);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #FAF9F5;
+  color: #141413;
+  font-family: 'Lora', serif;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.5;
+}
+
+p, li, span, a, button, label, input, textarea, figcaption, blockquote, td, th, div {
+  line-height: 1.5;
+}
+
+code, .mono {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+main .max-w-md,
+main .max-w-lg,
+main .max-w-xl,
+main .max-w-2xl,
+main .max-w-3xl,
+footer .max-w-xl {
+  max-width: var(--content-column-width) !important;
+}
+
+main .max-w-4xl,
+main .max-w-5xl {
+  max-width: var(--wide-column-width) !important;
+}
+
+nav .max-w-6xl,
+main .max-w-6xl {
+  max-width: var(--full-layout-width) !important;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #FAF9F5;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #B1ADA1;
+  border-radius: 3px;
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 4px rgba(217, 119, 87, 0.3); }
+  50% { box-shadow: 0 0 12px rgba(217, 119, 87, 0.6); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+}
+
+@keyframes breathe {
+  0%, 100% { transform: scale(1); opacity: 0.8; }
+  50% { transform: scale(1.05); opacity: 1; }
+}
+
+.term-highlight {
+  background-color: rgba(217, 119, 87, 0.15);
+  padding: 1px 4px;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.term-highlight:hover {
+  background-color: rgba(217, 119, 87, 0.3);
+}
+
+
+.keyword-accent {
+  color: #D97757;
+  font-weight: 700;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
